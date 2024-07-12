@@ -23,7 +23,7 @@ export default function Recent({ }) {
                     preTitle="Documentation"
                     subTitle="featured documentation of projects"
                 />
-                <section className={css.projects}>
+                {/* <section className={css.projects}>
                     {
                         docs.map( ({ title, pubDate, link, author, thumbnail, categories }, index) => {
                             const date = new Date(pubDate).toDateString()
@@ -54,7 +54,7 @@ export default function Recent({ }) {
                             )
                         })
                     }
-                </section>
+                </section> */}
             </Container>
         </Section>
     )
