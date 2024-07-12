@@ -32,7 +32,7 @@ export default function Career() {
 									<h4>2023 · 2024</h4>
 							</span>
 							<p>
-							Developed an internal web app to broadcast messages using WhatsApp API and Facebook Business, enabling each company within Astra's 40+ subsidiaries to use their own private phone number for communications.
+							Developed an internal web app to broadcast messages using WhatsApp API and Facebook Business, enabling each company within Astra&apos;s 40+ subsidiaries to use their own private phone number for communications.
 							</p>
 							<p>
 							Re-developed an e-commerce app, integrating data through the Privy API and implementing an approval system to vet vendors before they engage with the platform. Synchronized data between two different sites, belibareng and eproc.
