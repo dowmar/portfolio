@@ -1,0 +1,21 @@
+{
+	"name": "Aryasatya Bhagaskara",
+	"logo": "",
+	"splashscreen": true,
+
+	"autoupdatecheck": true,
+	"version": "1.0.6",
+
+	"username": {
+		"github": "dowmar",
+		"dev": "dowmar"
+	},
+	"repository": {
+		"owner": "dowmar",
+		"name": "portfolio",
+		"repoName": "portfolio"
+	},
+	"portfolio": {
+		"fork_this": "Open-Source project 🥰"
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"intro": {
+		"start": "const myName = () =>",
+		"end": "Hey there!, my name is",
+		"speed": 60,
+		"deletionSpeed": 80,
+		"wrapper": "h2",
+		"startDelay": 1000,
+		"deleteDelay": 3000,
+		"restartDelay": 12000
+	},
+
+	"header": {
+		"name": "Arya",
+		"usp": "Passionate Full Stack Developer."
+	},
+
+	"paragraph": "Ever since I first encountered programming, it has fueled a lifelong journey of exploration and innovation. With every project, I seek to push boundaries and create transformative solutions, committed to shaping a brighter technological future. ",
+
+	"buttons": {
+		"primary": {
+			"title": "Hire Me",
+			"url": "mailto:domararya9029@gmail.com",
+			"leaveSite": false
+		},
+		"secondary": {
+			"title": "LinkedIn",
+			"url": "https://www.linkedin.com/in/aryasatya-bhagaskara-0001/",
+			"leaveSite": "true"
+		}
+	}
+}

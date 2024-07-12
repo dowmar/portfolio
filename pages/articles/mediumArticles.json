@@ -1,0 +1,17 @@
+{
+	"feed": {
+		"title": "ZebraX",
+		"description": "Latest articles from ZebraX",
+		"link": "https://medium.com/zebrax"
+	},
+	"items": [
+		{
+			"title": "What is a Beautiful Code?",
+			"pubDate": "2022-04-07T00:00:00Z",
+			"link": "https://medium.com/zebrax/what-is-a-beautiful-code-b242c2ed219b",
+			"author": "Aryasatya Bhagaskara",
+			"thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*GgkeLUc7QseAF_d4UY9Xnw.png",
+			"categories": ["Programming", "Code Quality"]
+		}
+	]
+}

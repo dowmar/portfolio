@@ -1,0 +1,40 @@
+[
+	{
+		"project": "Astra Orion",
+		"url": "https://orion.astra.co.id/",
+		"repo": "Public",
+		"descriptionTitle": "Orion is a service platform",
+		"description": "that provides broadcast messages, sends messages, message templates, and many more. Broadcast chat to all users and manage the business from a Facebook business.",
+		"imageOptions": [
+		],
+		"images": [
+			{ "key": "mock-stack",	"hover": "right", 	"h": "300", "w": "300", "url": "/img/orion.png" }
+
+		],
+		"stack": [
+			{ "key": "react", 		"name": "React", 		"type": "devicon" },
+			{ "key": "nodejs", 		"name": "Node.js", 		"type": "devicon" },
+			{ "key": "javascript", 	"name": "JavaScript", 	"type": "devicon" }
+
+		]
+
+	},
+	{
+		"project": "Belibareng",
+		"url": "https://belibareng.co.id/",
+		"repo": "Public",
+		"descriptionTitle": "E-commerce application solutions.",
+		"description": "Purchase goods together to get low prices.",
+		"imageOptions": [
+			{ "key": "size", 		"value": "large" }
+		],
+		"images": [
+			{ "key": "portfolio", "hover": "left", "h": "550", "w": "330",  "url": "/img/belibareng.png" }
+		],
+		"stack": [
+			{ "key": "react", 		"name": "React", 		"type": "devicon" },
+			{ "key": "nodejs", 		"name": "Node.js", 		"type": "devicon" },
+			{ "key": "javascript", 	"name": "JavaScript", 	"type": "devicon" }
+		]
+	}
+]

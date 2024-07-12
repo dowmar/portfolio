@@ -1,0 +1,47 @@
+{
+	"Websites": [
+		{
+			"person": "portfolio",
+			"link": "",
+			"note": ""
+		}
+
+	],
+
+	"links": [
+		{
+			"person": "Home",
+			"link": "",
+			"note": ""
+		},
+		{
+			"person": "Articles",
+			"link": "",
+			"note": ""
+		},
+
+		{
+			"person": "Projects",
+			"link": "",
+			"note": ""
+		},
+		{
+			"person": "Contact",
+			"link": "mailto:domararya9029@gmail.com",
+			"note": ""
+		}
+
+
+	],
+
+	"social": [
+		{
+			"url": "https://www.linkedin.com/in/aryasatya-bhagaskara-0001/",
+			"icon": "linkedin"
+		},
+		{
+			"url": "https://github.com/",
+			"icon": "github"
+		}
+	]
+}
