@@ -11,18 +11,12 @@
 	"links": [
 		{
 			"person": "Home",
-			"link": "",
+			"link": "/",
 			"note": ""
 		},
-		{
-			"person": "Articles",
-			"link": "",
-			"note": ""
-		},
-
 		{
 			"person": "Projects",
-			"link": "",
+			"link": "/Projects",
 			"note": ""
 		},
 		{

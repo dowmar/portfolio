@@ -40,7 +40,7 @@ const RecentArticles: React.FC<RecentArticlesProps> = ({ mediumArticles }) => {
 			<Container spacing={['verticalXXXXLrg']}>
 				{/* Section title */}
 				<SectionTitle
-					title="Recent Medium Articles"
+					title="Medium Articles"
 					preTitle="Informative"
 					subTitle="A personal quest to become a better creative writer."
 				/>
