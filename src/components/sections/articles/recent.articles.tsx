@@ -85,24 +85,24 @@ const RecentArticles: React.FC<RecentArticlesProps> = ({ mediumArticles }) => {
 	);
 };
 
-const mediumArticles = {
-	feed: {
-		title: "ZebraX",
-		description: "Latest articles from ZebraX",
-		link: "https://medium.com/zebrax",
-	},
-	items: [
-		{
-			title: "What is a Beautiful Code?",
-			pubDate: "2023-07-10T00:00:00Z", // Example date
-			link: "https://medium.com/zebrax/what-is-a-beautiful-code-b242c2ed219b",
-			author: "Author Name",
-			thumbnail: "https://miro.medium.com/v2/resize:fit:1200/format:webp/1*Zvh0Epg1dPhI49VxbFN_Jg.png",
-			categories: ["Programming", "Code Quality"],
-		},
-	],
-};
+// const mediumArticles = {
+// 	feed: {
+// 		title: "ZebraX",
+// 		description: "Latest articles from ZebraX",
+// 		link: "https://medium.com/zebrax",
+// 	},
+// 	items: [
+// 		{
+// 			title: "What is a Beautiful Code?",
+// 			pubDate: "2023-07-10T00:00:00Z", // Example date
+// 			link: "https://medium.com/zebrax/what-is-a-beautiful-code-b242c2ed219b",
+// 			author: "Author Name",
+// 			thumbnail: "https://miro.medium.com/v2/resize:fit:1200/format:webp/1*Zvh0Epg1dPhI49VxbFN_Jg.png",
+// 			categories: ["Programming", "Code Quality"],
+// 		},
+// 	],
+// };
 
-<RecentArticles mediumArticles={mediumArticles} />;
+// <RecentArticles mediumArticles={mediumArticles} />;
 
 export default RecentArticles;

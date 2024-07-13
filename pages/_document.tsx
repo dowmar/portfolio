@@ -67,8 +67,8 @@ export default function Document() {
                 <meta property="og:title" content="Aryasatya Bhagaskara" key="title"/>
                 <meta property="og:description"
                       content="Aryasatya Bhagaskara - A dedicated Full Stack Developer proficient in App/Web, Cloud, DevOps, AI/ML, and Design. Join my journey."/>
-                <meta property="og:image" content="https://avatars.githubusercontent.com/u/75434191?v=4"/>
-                <meta property="og:image:secure_url" content="https://avatars.githubusercontent.com/u/75434191?v=4"/>
+                <meta property="og:image" content="https://avatars.githubusercontent.com/u/58356962?s=400&u=a28b550b05bf9cab8f6b43fccf2899b4c5768d29&v=4"/>
+                <meta property="og:image:secure_url" content="https://avatars.githubusercontent.com/u/58356962?s=400&u=a28b550b05bf9cab8f6b43fccf2899b4c5768d29&v=4"/>
                 <meta property="og:image:type" content="image/jpeg"/>
                 <meta property="og:image:alt" content="Aryasatya Bhagaskara"/>
                 <meta property="og:image:width" content="300"/>
@@ -85,7 +85,7 @@ export default function Document() {
                 <meta name="twitter:title" content="Aryasatya Bhagaskara"/>
                 <meta name="twitter:description"
                       content="Aryasatya Bhagaskara - A dedicated Full Stack Developer proficient in App/Web, Cloud, DevOps, AI/ML, and Design. Join my journey."/>
-                <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/75434191?v=4"/>
+                <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/58356962?s=400&u=a28b550b05bf9cab8f6b43fccf2899b4c5768d29&v=4"/>
                 <meta name="twitter:creator" content=""/>
                 <meta name="twitter:domain" content=""/>
 
