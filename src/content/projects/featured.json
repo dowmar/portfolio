@@ -26,10 +26,9 @@
 		"descriptionTitle": "E-commerce application solutions.",
 		"description": "Purchase goods together to get low prices.",
 		"imageOptions": [
-			{ "key": "size", 		"value": "large" }
 		],
 		"images": [
-			{ "key": "portfolio", "hover": "left", "h": "550", "w": "330",  "url": "/img/belibareng.png" }
+			{ "key": "mock-stack", "hover": "left", "h": "300", "w": "300",  "url": "/img/belibareng.png" }
 		],
 		"stack": [
 			{ "key": "react", 		"name": "React", 		"type": "devicon" },
