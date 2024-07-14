@@ -28,7 +28,7 @@
 		"imageOptions": [
 		],
 		"images": [
-			{ "key": "mock-stack", "hover": "left", "h": "300", "w": "300",  "url": "/img/belibareng.png" }
+			{ "key": "mock-stack", "hover": "right", "h": "300", "w": "300",  "url": "/img/belibareng.png" }
 		],
 		"stack": [
 			{ "key": "react", 		"name": "React", 		"type": "devicon" },
