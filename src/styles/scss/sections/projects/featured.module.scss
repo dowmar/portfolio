@@ -19,9 +19,9 @@
 		@include transition;
 	}
 
-	&:nth-of-type(2n) {
-		flex-direction: row-reverse;
-	}
+	// &:nth-of-type(2n) {
+	// 	flex-direction: row-reverse;
+	// }
 
 	&:hover {
 		cursor: pointer;
