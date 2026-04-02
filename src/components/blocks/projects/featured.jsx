@@ -1,18 +1,17 @@
 
 import Image from 'next/image'
-import { useRouter } from 'next/router';
-import {useEffect} from 'react'
-import {m, useAnimation} from "framer-motion"
-import {useInView} from 'react-intersection-observer'
+import { useEffect } from 'react'
+import { m, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import Badges from '../../utils/badge.list'
 import Icon from '../../utils/icon'
 
 import css from '../../../styles/scss/sections/projects/featured.module.scss'
 
-export default function FeaturedProject({ content }, index) {
-
-	const { project, url, repo, descriptionTitle,description, stack, imageOptions, images } = content
+export default function FeaturedProject({ content, index }) {
+	const { project, url, repo, descriptionTitle, description, stack, images } = content
+	const previewImage = images?.[0]
 
 	const controls = useAnimation();
 	const { ref, inView  } = useInView({
@@ -32,45 +31,64 @@ export default function FeaturedProject({ content }, index) {
 	return (
 		<m.section 	
 			key={index}
-			className={css.project} 
+			className={css.project}
 			//framer-motion
 			ref={ref}
 			variants={container}
 			initial={[ "rest", "hidden" ]}
 			whileHover="hover"
-			animate={controls} >
-			
+			animate={controls}
+		>
+			<div className={css.imageContainer} onClick={handleProjectClick}>
+				{previewImage ? (
+					<>
+						<div className={css.imageGlow} aria-hidden="true" />
+						<m.div className={css.imageFrame} variants={imageFrame}>
+							<Image
+								src={previewImage.url}
+								alt={`${project} preview`}
+								fill
+								sizes="(max-width: 768px) 100vw, 50vw"
+								className={css.projectImage}
+								priority={index < 2}
+							/>
+						</m.div>
+					</>
+				) : null}
+				<div className={css.imageOverlay}>
+					<span className={css.projectIndex}>0{index + 1}</span>
+					<div className={css.visualMeta}>
+						<span>Live Project</span>
+						<span>{stack.length} technologies</span>
+					</div>
+				</div>
+			</div>
+
 			<div className={css.details}>
 				<div className={css.projectHeader}>
+					<span className={css.eyebrow}>Selected Work</span>
 					<div className={css.header}>
-						<h3 className="highlight">{project}</h3><span className={css.privateOr}><i className="devicon-github-plain"></i>{repo}</span>	
+						<h3 className="highlight">{project}</h3>
+						<span className={css.privateOr}>
+							<i className="devicon-github-plain"></i>
+							{repo}
+						</span>
 					</div>
 					<div className={css.description}>
-						<p><strong>{descriptionTitle}</strong> {description}</p>
+						<p>{descriptionTitle}</p>
+						<span>{description}</span>
 					</div>
 					<div className={css.stackContainer}>
 						<Badges list={stack} block="stack" fullContainer={false} color={false} />
 					</div>
-					<m.div variants={''} className={css.viewProject} onClick={handleProjectClick}>
-						<Icon icon={[ 'fad', 'arrow-right-to-bracket' ]} />
-					</m.div>
+					<div className={css.actionRow}>
+						<m.button type="button" variants={buttonMotion} className={css.viewProject} onClick={handleProjectClick}>
+							<span>Open project</span>
+							<Icon icon={[ 'fad', 'arrow-right-to-bracket' ]} />
+						</m.button>
+						<span className={css.projectHint}>Fast read, cleaner preview, no tiny screenshot chaos.</span>
+					</div>
 				</div>
-			</div>
-
-			<div className={css.imageContainer}>
-				<span className={`${css.imageAnimationContainer}`}>
-					{ images.map( ({key, url, hover, h, w }, index) => {
-						hover = ( hover === 'left' ) ? hoverLeft : hoverRight
-						return (
-							<m.div key={`${index}-${key}`} variants={item}>
-								<m.div variants={hover}>
-									<Image src={url} alt="x" height={h} width={w}  loading="eager"
-									/>
-								</m.div>
-							</m.div>
-						)}
-					) }
-				</span>
 			</div>
 		</m.section>
 	)
@@ -103,42 +121,45 @@ const container = {
 	}
 }
 
-const item = {
-	hidden: { 
-		y: 75, 
+const imageFrame = {
+	hidden: {
+		y: 50,
 		opacity: 0,
-		transition: {
-			type: "tween",
-			ease: "easeIn",
-			duration: .35, 
-		}
+		scale: 0.96,
 	},
 	visible: {
 		y: 0,
 		opacity: 1,
+		scale: 1,
 		transition: {
-			type: "tween",
-			ease: "easeOut",
-			duration: .5, 
-		}
+			duration: 0.55,
+			ease: 'easeOut',
+		},
+	},
+	rest: {
+		scale: 1,
+		rotate: 0,
+	},
+	hover: {
+		scale: 1.02,
+		rotate: -1,
+		transition: {
+			duration: 0.3,
+			ease: 'easeOut',
+		},
 	},
 }
 
-const hoverLeft = {
+const buttonMotion = {
 	rest: {
-		x: 0
+		x: 0,
 	},
 	hover: {
-		x: -20
-	}
-}
-
-const hoverRight = {
-	rest: {
-		x: 0
+		x: 4,
+		transition: {
+			duration: 0.2,
+			ease: 'easeOut',
+		},
 	},
-	hover: {
-		x: 20
-	}
 }
 

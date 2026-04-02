@@ -76,22 +76,22 @@
 // Dark mode theme
 :root[data-theme="dark"] {
   --primary-bright: #ffffff;
-  --primary: #bfbfbf;
-  --primary-dim: #888889;
-  --primary-dim2: #262627;
-  --primary-dark: #141415;
+  --primary: #d7dde5;
+  --primary-dim: #8a97a8;
+  --primary-dim2: #20252d;
+  --primary-dark: #151a22;
   --primary-splash: #000000;
-  --secondary: #7feaff;
-  --secondary-bright: #5f8cff;
+  --secondary: #7fd2ff;
+  --secondary-bright: #8ab0ff;
 
-  --background: #060708;
-  --background-dim: #08090a;
-  --background-dim2: #0e0f11;
+  --background: #071017;
+  --background-dim: #0b141d;
+  --background-dim2: #101a24;
 
-  --neon-1-1: #a7d575;
-  --neon-1-2: #52abc4;
-  --neon-2-1: #fdc007;
-  --neon-2-2: #c624ee;
+  --neon-1-1: #9fd46d;
+  --neon-1-2: #4db0d1;
+  --neon-2-1: #ffc75e;
+  --neon-2-2: #58b8ff;
 
   --icon-bright: #ffffff;
 
@@ -109,57 +109,28 @@
 // Light mode theme
 :root[data-theme="light"],
 :root[data-theme="undefined"] {
-  --primary-bright: #000000;
-  --primary: #2e2e2e;
-  --primary-dim: #3a3a3a;
-  --primary-dim2: #585858;
-  --primary-dark: #dfdfdf;
+  --primary-bright: #102033;
+  --primary: #33465c;
+  --primary-dim: #66788f;
+  --primary-dim2: #8a9aaf;
+  --primary-dark: #d7e0ea;
   --primary-splash: #ffffff;
-  --secondary: #002aff;
-  --secondary-bright: #4800ff;
+  --secondary: #1561ff;
+  --secondary-bright: #1596ff;
 
-  --background: #ededed;
-  --background-dim: #fbfbfb;
-  --background-dim2: #fefefe;
+  --background: #eef4f8;
+  --background-dim: #f6f9fc;
+  --background-dim2: #ffffff;
 
-  --neon-1-1: #424bff;
-  --neon-1-2: #2493ee;
-  --neon-2-1: #37eaf7;
-  --neon-2-2: #c624ee;
+  --neon-1-1: #1f6dff;
+  --neon-1-2: #35b8f1;
+  --neon-2-1: #14c7a1;
+  --neon-2-2: #7e88ff;
 
   --icon-bright: var(--neon-1-1);
 
-  --mesh-color-1: #96c4f3;
-  --mesh-color-2: #96a8f2;
-  --mesh-color-3: #bad0ef;
-  --mesh-color-4: #c8ceda;
-}
-
-// Unicorn mode theme
-:root[data-theme="unicorn"] {
-  --primary-bright: #000000;
-  --primary: #2e2e2e;
-  --primary-dim: #464646;
-  --primary-dim2: #585858;
-  --primary-dark: #dfdfdf;
-  --primary-splash: #ffffff;
-
-  --secondary: #ff00bb;
-  --secondary-bright: #feff00;
-
-  --background: #ffffff;
-  --background-dim: #fbfbfb;
-  --background-dim2: #fefefe;
-
-  --neon-1-1: #37eaf7;
-  --neon-1-2: #c624ee;
-  --neon-2-1: #37eaf7;
-  --neon-2-2: #2493ee;
-
-  --icon-bright: var(--neon-1-1);
-
-  --mesh-color-1: #96c4f3;
-  --mesh-color-2: #f296cc;
-  --mesh-color-3: #efe2ba;
-  --mesh-color-4: #c8d7da;
+  --mesh-color-1: #d5e7fb;
+  --mesh-color-2: #dce9ff;
+  --mesh-color-3: #eef5ff;
+  --mesh-color-4: #f9fbff;
 }

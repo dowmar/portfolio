@@ -1,29 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Player } from '@lottiefiles/react-lottie-player';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
-import ConfettiComponent from './../intro/confetti';
 import { checkForUpdates, VersionDetails } from './checkforupdates';
 import settings from '../../../src/content/_settings.json';
 
 const DevelopmentNotice: React.FC = () => {
     const [showPopup, setShowPopup] = useState<boolean>(false);
-    const [isVerified, setIsVerified] = useState<boolean>(false);
-    const [hasShownConfetti, setHasShownConfetti] = useState<boolean>(false);
     const [versionDetails, setVersionDetails] = useState<VersionDetails | null>(null);
     const [autoupdatecheck, setAutoupdatecheck] = useState<boolean | null>(null);
-    const [WelMsg, setWelMsg] = useState<string | null>(null);
-    const [hideContent, setHideContent] = useState<boolean>(false);
-    const [showNewPlayer, setShowNewPlayer] = useState<boolean>(false);
-    const [timerRemaining, setTimerRemaining] = useState<number | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            // Fetch autoupdatecheck from the JSON file
             const jsonAutoupdatecheck = settings?.autoupdatecheck || false;
             setAutoupdatecheck(jsonAutoupdatecheck);
 
             if (jsonAutoupdatecheck) {
-                // Fetch version details only if autoupdatecheck is true
                 const details = await checkForUpdates();
                 setVersionDetails(details);
             }
@@ -39,183 +28,82 @@ const DevelopmentNotice: React.FC = () => {
 
     const handleHidePopup = () => {
         localStorage.setItem('developmentNotice', 'true');
-        setIsVerified(true);
-        setWelMsg("Make sure to Follow me on Github for more! ❤️");
-        setHideContent(true); // Hide existing content
-        setShowNewPlayer(true); // Show new Player
-        const timeoutDuration = 5000;
-        setTimerRemaining(timeoutDuration / 1000);
-        const intervalId = setInterval(() => {
-            setTimerRemaining((prev) => (prev !== null ? prev - 1 : null));
-        }, 1000);
-
-        setTimeout(() => {
-            clearInterval(intervalId);
-            setShowPopup(false);
-            setHasShownConfetti(true);
-            setWelMsg(null);
-            setTimerRemaining(null);
-        }, timeoutDuration);
-    };
-
-    const handleVerify = (token: string) => {
-        if (token) {
-            setIsVerified(true);
-        }
+        setShowPopup(false);
     };
 
     if (!showPopup) {
-        return (
-            <>
-                {hasShownConfetti && isVerified && <ConfettiComponent />}
-            </>
-        );
+        return null;
     }
 
     return (
-        <div>
+        <div
+            style={{
+                position: 'fixed',
+                right: '24px',
+                bottom: '24px',
+                zIndex: 9999,
+                maxWidth: '360px',
+                width: 'calc(100vw - 32px)',
+                padding: '1px',
+                borderRadius: '24px',
+                background: 'linear-gradient(135deg, rgba(80,176,209,0.65), rgba(159,212,109,0.45))',
+                boxShadow: '0 24px 60px rgba(0, 0, 0, 0.28)',
+            }}
+        >
             <div
                 style={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                    zIndex: 9999,
-                    backdropFilter: 'blur(4px)',
+                    borderRadius: '23px',
+                    background: 'rgba(7, 16, 23, 0.92)',
+                    color: '#f4f8fc',
+                    backdropFilter: 'blur(16px)',
+                    padding: '20px',
                 }}
             >
-                <div
+                <p style={{ fontSize: '12px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8ab0c4', marginBottom: '10px' }}>
+                    Quick note
+                </p>
+                <h2 style={{ fontSize: '22px', lineHeight: 1.2, marginBottom: '10px', fontWeight: 700 }}>
+                    Portfolio is live and easier to browse.
+                </h2>
+                <p style={{ fontSize: '14px', lineHeight: 1.7, color: '#d6e2ec', marginBottom: '16px' }}>
+                    No captcha, no blocker. If you spot a bug, report it on{' '}
+                    <a href="https://github.com/dowmar" target="_blank" rel="noopener noreferrer" style={{ color: '#7fd2ff' }}>
+                        GitHub
+                    </a>
+                    .
+                </p>
+                {autoupdatecheck && (
+                    <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#9fb3c7', marginBottom: '16px' }}>
+                        {versionDetails
+                            ? versionDetails.isLatestVersion
+                                ? `Version ${versionDetails.currentVersion} is up to date.`
+                                : `New release ${versionDetails.latestVersion} is available.`
+                            : 'Checking latest release...'}
+                        {versionDetails && !versionDetails.isLatestVersion ? (
+                            <>
+                                {' '}
+                                <a href={versionDetails.releasesUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#9fd46d' }}>
+                                    View release
+                                </a>
+                            </>
+                        ) : null}
+                    </p>
+                )}
+                <button
+                    onClick={handleHidePopup}
                     style={{
-                        background: 'transparent',
-                        color: '#ffffff',
-                        padding: '20px',
-                        borderRadius: '10px',
-                        maxWidth: '400px',
-                        textAlign: 'center',
+                        background: 'linear-gradient(135deg, #9fd46d, #4db0d1)',
+                        color: '#071017',
+                        border: 'none',
+                        padding: '11px 16px',
+                        borderRadius: '999px',
+                        cursor: 'pointer',
+                        fontWeight: 700,
                     }}
                 >
-                    {showNewPlayer ? (
-                        <Player
-                            autoplay
-                            loop
-                            src="/lottie/github.json"
-                            style={{ marginBottom: '20px', width: '300px', height: '300px' }}
-                        />
-                    ) : (
-                        <Player
-                            autoplay
-                            loop
-                            src="/lottie/codingdev.json"
-                            style={{ marginBottom: '20px', width: '300px', height: '300px' }}
-                        />
-                    )}
-                    {hideContent ? null : (
-                        <>
-                            <p style={{ fontSize: '18px', marginBottom: '20px' }}>
-                                Thank you for visiting my portfolio!👻
-                            </p>
-                            <p style={{ fontSize: '14px', marginBottom: '30px' }}>
-                                If you encounter any issues or bugs, please report them{' '}
-                                <a href="">@dowmar</a>
-                            </p>
-                            {!isVerified ? (
-                                <>
-                                    <div style={{ marginBottom: '10px', marginLeft: '20px' }}>
-                                        <HCaptcha
-                                            sitekey="d27bf471-6339-4603-b63f-5ab5fdd96ace"
-                                            onVerify={handleVerify}
-                                        />
-                                    </div>
-                                    <p style={{ fontSize: '12px', color: 'red', marginBottom: '10px' }}>
-                                        Please complete the verification.
-                                    </p>
-                                </>
-                            ) : null}
-                        </>
-                    )}
-                    {WelMsg && (
-                        <div>
-                            <h2 style={{ fontSize: '32px', marginBottom: '20px'}}>
-                                <span dangerouslySetInnerHTML={{ __html: WelMsg.replace('Github', '<a href="https://github.com/dowmar" target="_blank" rel="noopener noreferrer" style="color: #3498db;">Github</a>') }} />
-                            </h2>
-                            {timerRemaining !== null && (
-                                <p style={{ fontSize: '16px', marginBottom: '10px', color: 'linear-gradient(to right, #3498db, #2ecc71)' }}>
-                                    Closes in {timerRemaining} seconds.
-                                </p>
-                            )}
-                        </div>
-                    )}
-
-
-
-                    {!hideContent && (
-                        <button
-                            onClick={handleHidePopup}
-                            disabled={!isVerified}
-                            style={{
-                                background: 'linear-gradient(to right, #7b68ee, #b22cff)',
-                                color: '#ffffff',
-                                border: 'none',
-                                padding: '10px 20px',
-                                borderRadius: '5px',
-                                cursor: 'pointer',
-                                marginTop: '10px',
-                            }}
-                        >
-                            I understand
-                        </button>
-                    )}
-                </div>
-                {autoupdatecheck && (
-                    <div
-                        style={{
-                            marginTop: '10px',
-                            fontSize: '12px',
-                            position: 'fixed',
-                            bottom: '0',
-                            left: '0',
-                            width: '100%',
-                            textAlign: 'center',
-                            padding: '10px',
-                        }}
-                    >
-                        <p>
-                            Current Version:{' '}
-                            {versionDetails ? (
-                                <a
-                                    href={``}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {versionDetails.currentVersion}
-                                </a>
-                            ) : 'Loading...'}{' '}
-                            -{' '}
-                            {versionDetails && versionDetails.isLatestVersion ? (
-                                'Everything is up to date!👻'
-                            ) : (
-                                <>
-                                    {versionDetails ? (
-                                        <a
-                                            href={versionDetails.releasesUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            New Version {versionDetails.latestVersion} available🎉
-                                        </a>
-                                    ) : 'Checking for updates...'}
-                                </>
-                            )}
-                        </p>
-                    </div>
-                )}
+                    Dismiss
+                </button>
             </div>
-            {hasShownConfetti && isVerified && <ConfettiComponent />}
         </div>
     );
 };
